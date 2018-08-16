@@ -12,10 +12,10 @@ from if_lib.dut_shell import DutShell
 class PeriphUartIf(DutShell):
     """Interface to the node with periph_uart firmware."""
 
-    def uart_init(self, dev, baud):
+    def init(self, dev, baud):
         """Initialize DUT's UART."""
         return self.send_cmd("init {} {}".format(dev, baud))
 
-    def uart_send_string(self, dev, test_string):
+    def send(self, dev, test_string):
         """Send data via DUT's UART."""
         return self.send_cmd("send {} {}".format(dev, test_string))
